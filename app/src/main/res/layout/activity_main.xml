@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <view
+        android:id="@+id/drawview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="com.zhuelise.lab09spriteandanimation.DrawView"
@@ -15,4 +16,42 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/up_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="▲"
+        app:layout_constraintLeft_toRightOf="@id/left_button"
+        app:layout_constraintRight_toLeftOf="@id/right_button"
+        app:layout_constraintBottom_toTopOf="@id/down_button"/>
+    <Button
+        android:id="@+id/down_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="▼"
+        app:layout_constraintLeft_toRightOf="@id/left_button"
+        app:layout_constraintRight_toLeftOf="@id/right_button"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <Button
+        android:id="@+id/left_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="◀"
+        app:layout_constraintRight_toLeftOf="@id/down_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <Button
+        android:id="@+id/right_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="▶"
+        app:layout_constraintLeft_toRightOf="@id/down_button"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <Button
+        android:onClick="resetSprites"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="reset"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

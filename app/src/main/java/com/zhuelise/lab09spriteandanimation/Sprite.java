@@ -9,7 +9,7 @@ import android.graphics.RectF;
 public class Sprite extends RectF {
     private int dX, dY, width, height;
     private Bitmap bmap;
-    private int currentXFrame, currentYFrame, x, y = 0;
+    public int currentXFrame, currentYFrame, x, y = 0;
     private int rows = 4;
     private int columns = 4;
 
@@ -32,9 +32,14 @@ public class Sprite extends RectF {
         this(1, 1, b);
     }
 
+    public Sprite() {
+        dX = 1;
+        dY = 1;
+    }
+
     public void update() {
-        x += dX;
-        y += dY;
+        x+=dX;
+        y+=dY;
         currentXFrame = ++currentXFrame % columns;
         //currentYFrame = ++currentYFrame%columns;
     }
@@ -74,40 +79,13 @@ public class Sprite extends RectF {
         return y;
     }
 
+    public void setPosition(int a, int b) {
+        x = a;
+        y = b;
+        update();
+    }
+
     public void setCurrentYFrame(int y) {
         currentYFrame = y;
     }
-
-    //buttons for xml file
-//    <Button
-//    android:id="@+id/up_button"
-//    android:layout_width="50dp"
-//    android:layout_height="50dp"
-//    android:text="▲"
-//    app:layout_constraintLeft_toRightOf="@id/left_button"
-//    app:layout_constraintRight_toLeftOf="@id/right_button"
-//    app:layout_constraintBottom_toTopOf="@id/down_button"/>
-//    <Button
-//    android:id="@+id/down_button"
-//    android:layout_width="50dp"
-//    android:layout_height="50dp"
-//    android:text="▼"
-//    app:layout_constraintLeft_toRightOf="@id/left_button"
-//    app:layout_constraintRight_toLeftOf="@id/right_button"
-//    app:layout_constraintBottom_toBottomOf="parent" />
-//    <Button
-//    android:id="@+id/left_button"
-//    android:layout_width="50dp"
-//    android:layout_height="50dp"
-//    android:text="◀"
-//    app:layout_constraintRight_toLeftOf="@id/down_button"
-//    app:layout_constraintLeft_toLeftOf="parent"
-//    app:layout_constraintBottom_toBottomOf="parent"/>
-//    <Button
-//    android:id="@+id/right_button"
-//    android:layout_width="50dp"
-//    android:layout_height="50dp"
-//    android:text="▶"
-//    app:layout_constraintLeft_toRightOf="@id/down_button"
-//    app:layout_constraintBottom_toBottomOf="parent"/>
 }
